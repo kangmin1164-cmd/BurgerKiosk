@@ -66,6 +66,9 @@ namespace BurgerKiosk
             rdoBulggogiburger.Checked = false;
             rdoChickenburger.Checked = false;
 
+            // 첫 번째 라디오 버튼의 TabStop을 true로 강제 설정합니다.
+            rdoBurger.TabStop = true;
+
             chkFrenchfries.Checked = false;
             chkCola.Checked = false;
             chkCheese.Checked = false;
