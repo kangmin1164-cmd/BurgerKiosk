@@ -46,6 +46,7 @@
             btnOrder = new Button();
             lblAmount = new Label();
             lstOrderbox = new ListBox();
+            lblErrorMessage = new Label();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picChicken).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBulggogi).BeginInit();
@@ -72,7 +73,7 @@
             rdoBurger.Location = new Point(24, 51);
             rdoBurger.Name = "rdoBurger";
             rdoBurger.Size = new Size(105, 35);
-            rdoBurger.TabIndex = 1;
+            rdoBurger.TabIndex = 0;
             rdoBurger.TabStop = true;
             rdoBurger.Text = "햄버거";
             rdoBurger.UseVisualStyleBackColor = true;
@@ -81,10 +82,10 @@
             // 
             rdoBulggogiburger.AutoSize = true;
             rdoBulggogiburger.ForeColor = SystemColors.ActiveCaptionText;
-            rdoBulggogiburger.Location = new Point(24, 133);
+            rdoBulggogiburger.Location = new Point(24, 139);
             rdoBulggogiburger.Name = "rdoBulggogiburger";
             rdoBulggogiburger.Size = new Size(149, 35);
-            rdoBulggogiburger.TabIndex = 2;
+            rdoBulggogiburger.TabIndex = 1;
             rdoBulggogiburger.TabStop = true;
             rdoBulggogiburger.Text = "불고기버거";
             rdoBulggogiburger.UseVisualStyleBackColor = true;
@@ -93,10 +94,10 @@
             // 
             rdoChickenburger.AutoSize = true;
             rdoChickenburger.ForeColor = SystemColors.ActiveCaptionText;
-            rdoChickenburger.Location = new Point(24, 228);
+            rdoChickenburger.Location = new Point(24, 227);
             rdoChickenburger.Name = "rdoChickenburger";
             rdoChickenburger.Size = new Size(127, 35);
-            rdoChickenburger.TabIndex = 3;
+            rdoChickenburger.TabIndex = 2;
             rdoChickenburger.TabStop = true;
             rdoChickenburger.Text = "치킨버거";
             rdoChickenburger.UseVisualStyleBackColor = true;
@@ -218,7 +219,7 @@
             grpOrder.Location = new Point(526, 72);
             grpOrder.Name = "grpOrder";
             grpOrder.Size = new Size(262, 309);
-            grpOrder.TabIndex = 3;
+            grpOrder.TabIndex = 0;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
             // 
@@ -229,7 +230,7 @@
             btnReset.Location = new Point(138, 252);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(118, 57);
-            btnReset.TabIndex = 7;
+            btnReset.TabIndex = 0;
             btnReset.Text = "초기화";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
@@ -241,7 +242,7 @@
             btnOrder.Location = new Point(6, 252);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(118, 57);
-            btnOrder.TabIndex = 6;
+            btnOrder.TabIndex = 0;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -250,10 +251,10 @@
             // 
             lblAmount.AutoSize = true;
             lblAmount.ForeColor = Color.Blue;
-            lblAmount.Location = new Point(21, 211);
+            lblAmount.Location = new Point(21, 205);
             lblAmount.Name = "lblAmount";
             lblAmount.Size = new Size(135, 31);
-            lblAmount.TabIndex = 5;
+            lblAmount.TabIndex = 0;
             lblAmount.Text = "총 금액: 0원";
             // 
             // lstOrderbox
@@ -262,13 +263,26 @@
             lstOrderbox.Location = new Point(6, 43);
             lstOrderbox.Name = "lstOrderbox";
             lstOrderbox.Size = new Size(250, 159);
-            lstOrderbox.TabIndex = 4;
+            lstOrderbox.TabIndex = 0;
+            // 
+            // lblErrorMessage
+            // 
+            lblErrorMessage.AutoSize = true;
+            lblErrorMessage.Font = new Font("한컴 고딕", 10.999999F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            lblErrorMessage.ForeColor = Color.Red;
+            lblErrorMessage.Location = new Point(547, 384);
+            lblErrorMessage.Name = "lblErrorMessage";
+            lblErrorMessage.Size = new Size(218, 29);
+            lblErrorMessage.TabIndex = 4;
+            lblErrorMessage.Text = "메뉴를 선택해주세요!";
+            lblErrorMessage.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblErrorMessage);
             Controls.Add(grpOrder);
             Controls.Add(lbltitle);
             Controls.Add(grpMenu);
@@ -308,5 +322,6 @@
         private Button btnReset;
         private Button btnOrder;
         private Label lblAmount;
+        private Label lblErrorMessage;
     }
 }

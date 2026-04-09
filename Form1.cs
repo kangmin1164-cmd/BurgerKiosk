@@ -9,6 +9,23 @@ namespace BurgerKiosk
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            //유효성 검사
+            if (!rdoBurger.Checked && !rdoBulggogiburger.Checked && !rdoChickenburger.Checked)
+            {
+                // 아무것도 선택되지 않았다면 경고 라벨 표시
+                lblErrorMessage.Visible = true;
+
+                // 리스트박스와 금액 라벨도 깔끔하게 비움
+                lstOrderbox.Items.Clear();
+                lblAmount.Text = "총 금액 : 0원";
+
+                return; // 이후 로직 실행 방지
+            }
+
+            // 정상 주문 시 처리
+            // 에러 라벨을 다시 숨깁니다.
+            lblErrorMessage.Visible = false;
+
             // 1. 초기화: 버튼을 누를 때마다 새로 계산해야 하므로 0으로 시작
             int totalCost = 0;
             lstOrderbox.Items.Clear(); // 리스트박스 비우기
@@ -58,6 +75,9 @@ namespace BurgerKiosk
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            // 초기화 버튼 시에도 에러 라벨은 숨김.
+            lblErrorMessage.Visible = false;
+
             // 모든 컨트롤 상태 초기화
             rdoBurger.Checked = false;
             rdoBulggogiburger.Checked = false;
