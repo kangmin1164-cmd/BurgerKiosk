@@ -42,11 +42,11 @@
             chkCola = new CheckBox();
             chkFrenchfries = new CheckBox();
             grpOrder = new GroupBox();
+            lblAmount = new Label();
+            lblErrorMessage = new Label();
+            lstOrderbox = new ListBox();
             btnReset = new Button();
             btnOrder = new Button();
-            lblAmount = new Label();
-            lstOrderbox = new ListBox();
-            lblErrorMessage = new Label();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picChicken).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBulggogi).BeginInit();
@@ -115,7 +115,7 @@
             grpMenu.Location = new Point(35, 80);
             grpMenu.Name = "grpMenu";
             grpMenu.Size = new Size(300, 301);
-            grpMenu.TabIndex = 1;
+            grpMenu.TabIndex = 2;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
             // 
@@ -160,7 +160,7 @@
             grpOption.Location = new Point(352, 72);
             grpOption.Name = "grpOption";
             grpOption.Size = new Size(168, 309);
-            grpOption.TabIndex = 2;
+            grpOption.TabIndex = 3;
             grpOption.TabStop = false;
             grpOption.Text = "추가 옵션";
             // 
@@ -171,7 +171,7 @@
             chkSause.Location = new Point(8, 237);
             chkSause.Name = "chkSause";
             chkSause.Size = new Size(134, 35);
-            chkSause.TabIndex = 6;
+            chkSause.TabIndex = 3;
             chkSause.Text = "소스 추가";
             chkSause.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@
             chkCheese.Location = new Point(8, 180);
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(134, 35);
-            chkCheese.TabIndex = 5;
+            chkCheese.TabIndex = 2;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             chkCola.Location = new Point(8, 118);
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(84, 35);
-            chkCola.TabIndex = 4;
+            chkCola.TabIndex = 1;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             // 
@@ -204,48 +204,23 @@
             chkFrenchfries.Location = new Point(8, 59);
             chkFrenchfries.Name = "chkFrenchfries";
             chkFrenchfries.Size = new Size(128, 35);
-            chkFrenchfries.TabIndex = 3;
+            chkFrenchfries.TabIndex = 0;
             chkFrenchfries.Text = "감자튀김";
             chkFrenchfries.UseVisualStyleBackColor = true;
             // 
             // grpOrder
             // 
-            grpOrder.Controls.Add(btnReset);
-            grpOrder.Controls.Add(btnOrder);
             grpOrder.Controls.Add(lblAmount);
+            grpOrder.Controls.Add(lblErrorMessage);
             grpOrder.Controls.Add(lstOrderbox);
             grpOrder.Font = new Font("한컴 고딕", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.Red;
             grpOrder.Location = new Point(526, 72);
             grpOrder.Name = "grpOrder";
             grpOrder.Size = new Size(262, 309);
-            grpOrder.TabIndex = 0;
+            grpOrder.TabIndex = 4;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
-            // 
-            // btnReset
-            // 
-            btnReset.BackColor = Color.Red;
-            btnReset.ForeColor = Color.White;
-            btnReset.Location = new Point(138, 252);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(118, 57);
-            btnReset.TabIndex = 8;
-            btnReset.Text = "초기화";
-            btnReset.UseVisualStyleBackColor = false;
-            btnReset.Click += btnReset_Click;
-            // 
-            // btnOrder
-            // 
-            btnOrder.BackColor = Color.FromArgb(0, 192, 0);
-            btnOrder.ForeColor = Color.White;
-            btnOrder.Location = new Point(6, 252);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(118, 57);
-            btnOrder.TabIndex = 7;
-            btnOrder.Text = "주문하기";
-            btnOrder.UseVisualStyleBackColor = false;
-            btnOrder.Click += btnOrder_Click;
             // 
             // lblAmount
             // 
@@ -257,6 +232,18 @@
             lblAmount.TabIndex = 0;
             lblAmount.Text = "총 금액: 0원";
             // 
+            // lblErrorMessage
+            // 
+            lblErrorMessage.AutoSize = true;
+            lblErrorMessage.Font = new Font("한컴 고딕", 10.999999F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            lblErrorMessage.ForeColor = Color.Red;
+            lblErrorMessage.Location = new Point(21, 243);
+            lblErrorMessage.Name = "lblErrorMessage";
+            lblErrorMessage.Size = new Size(218, 29);
+            lblErrorMessage.TabIndex = 1;
+            lblErrorMessage.Text = "메뉴를 선택해주세요!";
+            lblErrorMessage.Visible = false;
+            // 
             // lstOrderbox
             // 
             lstOrderbox.FormattingEnabled = true;
@@ -266,17 +253,31 @@
             lstOrderbox.TabIndex = 0;
             lstOrderbox.TabStop = false;
             // 
-            // lblErrorMessage
+            // btnReset
             // 
-            lblErrorMessage.AutoSize = true;
-            lblErrorMessage.Font = new Font("한컴 고딕", 10.999999F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            lblErrorMessage.ForeColor = Color.Red;
-            lblErrorMessage.Location = new Point(547, 384);
-            lblErrorMessage.Name = "lblErrorMessage";
-            lblErrorMessage.Size = new Size(218, 29);
-            lblErrorMessage.TabIndex = 4;
-            lblErrorMessage.Text = "메뉴를 선택해주세요!";
-            lblErrorMessage.Visible = false;
+            btnReset.BackColor = Color.Red;
+            btnReset.Font = new Font("한컴 고딕", 10.999999F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnReset.ForeColor = Color.White;
+            btnReset.Location = new Point(664, 347);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(124, 57);
+            btnReset.TabIndex = 1;
+            btnReset.Text = "초기화";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.FromArgb(0, 192, 0);
+            btnOrder.Font = new Font("한컴 고딕", 10.999999F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnOrder.ForeColor = Color.White;
+            btnOrder.Location = new Point(532, 347);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(126, 57);
+            btnOrder.TabIndex = 0;
+            btnOrder.Text = "주문하기";
+            btnOrder.UseVisualStyleBackColor = false;
+            btnOrder.Click += btnOrder_Click;
             // 
             // Form1
             // 
@@ -285,7 +286,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnReset;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblErrorMessage);
+            Controls.Add(btnReset);
+            Controls.Add(btnOrder);
             Controls.Add(grpOrder);
             Controls.Add(lbltitle);
             Controls.Add(grpMenu);
