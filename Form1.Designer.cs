@@ -171,7 +171,7 @@
             chkSause.Location = new Point(8, 237);
             chkSause.Name = "chkSause";
             chkSause.Size = new Size(134, 35);
-            chkSause.TabIndex = 3;
+            chkSause.TabIndex = 6;
             chkSause.Text = "소스 추가";
             chkSause.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@
             chkCheese.Location = new Point(8, 180);
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(134, 35);
-            chkCheese.TabIndex = 2;
+            chkCheese.TabIndex = 5;
             chkCheese.Text = "치즈 추가";
             chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             chkCola.Location = new Point(8, 118);
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(84, 35);
-            chkCola.TabIndex = 1;
+            chkCola.TabIndex = 4;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             // 
@@ -204,7 +204,7 @@
             chkFrenchfries.Location = new Point(8, 59);
             chkFrenchfries.Name = "chkFrenchfries";
             chkFrenchfries.Size = new Size(128, 35);
-            chkFrenchfries.TabIndex = 0;
+            chkFrenchfries.TabIndex = 3;
             chkFrenchfries.Text = "감자튀김";
             chkFrenchfries.UseVisualStyleBackColor = true;
             // 
@@ -230,7 +230,7 @@
             btnReset.Location = new Point(138, 252);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(118, 57);
-            btnReset.TabIndex = 0;
+            btnReset.TabIndex = 8;
             btnReset.Text = "초기화";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
@@ -242,7 +242,7 @@
             btnOrder.Location = new Point(6, 252);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(118, 57);
-            btnOrder.TabIndex = 0;
+            btnOrder.TabIndex = 7;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -264,6 +264,7 @@
             lstOrderbox.Name = "lstOrderbox";
             lstOrderbox.Size = new Size(250, 159);
             lstOrderbox.TabIndex = 0;
+            lstOrderbox.TabStop = false;
             // 
             // lblErrorMessage
             // 
@@ -279,8 +280,10 @@
             // 
             // Form1
             // 
+            AcceptButton = btnOrder;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnReset;
             ClientSize = new Size(800, 450);
             Controls.Add(lblErrorMessage);
             Controls.Add(grpOrder);
